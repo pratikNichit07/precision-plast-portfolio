@@ -48,7 +48,7 @@ const CorporateFilm: React.FC<CorporateFilmProps> = ({ className = "" }) => {
               <video
                 id="corporate-video"
                 className="w-full h-full object-cover"
-                poster="public/image.png"
+                poster="/image.png"
                 preload="metadata"
                 controls
                 onClick={(e) => e.stopPropagation()}
@@ -56,16 +56,10 @@ const CorporateFilm: React.FC<CorporateFilmProps> = ({ className = "" }) => {
                 onPlay={() => setIsPlaying(true)} // Sync state on play
                 onPause={() => setIsPlaying(false)} // Sync state on pause
               >
-                {/* Sample video - replace this with your actual video */}
-                <source
-                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                  type="video/mp4"
-                />
+                <source src="video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
-
-            {/* Play/Pause button overlay - only show when not playing */}
             {!isPlaying && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-sanika-blue bg-opacity-80 rounded-full p-3 md:p-4 transform transition-transform duration-300 group-hover:scale-110">
